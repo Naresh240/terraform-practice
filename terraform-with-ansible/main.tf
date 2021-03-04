@@ -46,7 +46,7 @@ resource "null_resource" "ProvisionRemoteHostsIpToAnsibleHosts" {
 
 resource "null_resource" "ModifyApplyAnsiblePlayBook" {
   provisioner "local-exec" {
-    command = "sed -i -e '/hosts:/ s/: .*/: var.ansible_host/' playbook.yml"   #change host label in playbook dynamically
+    command = "sed -i -e '/hosts:/ s/: .*/: ${var.ansible_host}/' playbook.yml"   #change host label in playbook dynamically
   }
 
   provisioner "local-exec" {
