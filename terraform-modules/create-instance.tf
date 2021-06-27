@@ -1,5 +1,5 @@
 module "instance_create" {
-  source        = "./module/"
-  ami_id        = "ami-04d29b6f966df1537"
+  source        = "./modules/"
+  ami_id        = "ami-0ab4d1e9cf9a1215a"
   instance_type = "t2.micro"
 }
