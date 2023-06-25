@@ -10,10 +10,10 @@ Create DynamoDB
 
 ## Create DynamoDB Table
 
-![dynamodb_creation](../documents/dynamodb_table_creation.png)
+![dynamodb_creation](./documents/dynamodb_table_creation.png)
 
 ## S3 Bucket
-![S3Bucket](../documents/s3bucket.png)
+![S3Bucket](./documents/s3bucket.png)
 
 ## Here is a state locking script
 
@@ -29,7 +29,7 @@ terraform{
 }
 ```
 ## Open two termintals to understand about locking, each terminal using by different users
-![Open_Terminals](../documents/terminals.png)
+![Open_Terminals](./documents/terminals.png)
 
 ## Run below commands with developer1 adn developer2 respectively
 
@@ -40,9 +40,9 @@ terraform apply
 ```
 
 ## Checking lock on DynamoDB
-![DynamoDB_LOCK](../documents/DynamoDBLockID.png)
+![DynamoDB_LOCK](./documents/DynamoDBLockID.png)
 
 ## Checking lock error in terminal
-![Statefile_lock](../documents/Locking_on_Statefile.png)
+![Statefile_lock](./documents/Locking_on_Statefile.png)
 
 ```Note:``` If second developer wants to run script, need to wait until lock to be release
