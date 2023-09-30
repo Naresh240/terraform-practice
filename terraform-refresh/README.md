@@ -17,7 +17,8 @@ terraform apply -auto-approve
 ## Check terraform state
 
 ```bash
-terraform state
+terraform state list
+terraform show
 ```
 
 ```Note:```  Now remove one instance manually
@@ -26,7 +27,7 @@ terraform state
 
 ```bash
 terraform refresh
-terraform state
+terraform state list
 ```
 
 
