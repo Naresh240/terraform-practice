@@ -1,23 +1,18 @@
-data "aws_vpc" "example" {
+data "aws_security_group" "example" {
   filter {
     name  = "tag:Name"
-    values= ["default"]
+    values= ["allow_ssh"]
   }
 }
 
-data "aws_security_group" "sg" {
-  filter {
-    name  = "group-name"
-    values= ["terraform-data-sg"]
-  }
-}
+resource "aws_instance" "example" {  
+  count = var.number_of_instances
 
-resource "aws_instance" "web" {
-  ami           = var.ami_id
-  instance_type = "t2.micro"
-  vpc_security_group_ids = [data.aws_security_group.sg.id]
+  ami             = var.image_id
+  instance_type   = var.inst_type
+  security_groups=[data.aws_security_group.example.name]
 
   tags = {
-    Name = "HelloWorld"
+    Name = "${var.tag_name}-${count.index}"
   }
 }
